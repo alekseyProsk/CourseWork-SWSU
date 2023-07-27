@@ -1,0 +1,18 @@
+{% extends 'main/baseTemplate.html' %}
+
+{% block title %}
+Создать обращение
+{% endblock %}
+
+
+{% block content %}
+ <h2> Создать обращение</h2>
+<form method = "post">
+ {% csrf_token %}
+ {{ form.theme }}<br>
+ {{form.textAppeal}}<br>
+
+ <button type = "submith" class ="btn btn-success">Создать обращение</button>
+
+</form>
+{% endblock %}

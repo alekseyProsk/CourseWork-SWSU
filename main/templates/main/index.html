@@ -1,0 +1,34 @@
+{% extends 'main/baseTemplate.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+    <h2> Главная </h2>
+<main class="px-3">
+    <title>Кроссбраузерный HTML звук и музыка на сайте для всех браузеров</title>
+</head>
+<embed src="C:\Users\omnym\Cursach\CursachWeb\CursachWeb\МУЗЫКА.wav" autostart="true" hidden="false" loop="false" width="300" height="65" align="bottom"> </embed>
+    <h1>Обратная связь!</h1>
+    <p class="lead">На нашем портале вы можете оставить обращение к нашей управляющей компании.</p>
+    <p class="lead">
+      <a href="{% url 'creatorAppeals' %}" class="btn btn-lg btn-light fw-bold border-white bg-white">Создать обращение</a>
+    </p>
+  </main>
+<h2>
+    Обращения жителей Вашего дома :
+</h2>
+{%if appeals%}
+{%for el in appeals%}
+<div class="alert alert-warning mt-2">
+    <big></big>
+    <big>{{ el.theme}} {{ el.data}} </big><br>
+    <small>{{ el.textAppeal }}</small>
+</div>
+{%endfor%}
+{% else%}
+<p1>Обращений нет, все довольны!</p1>
+{%endif%}
+{% endblock %}
